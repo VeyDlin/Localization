@@ -7,14 +7,18 @@ public class LocalizationManager {
     public LocalizationPack? pack { get; set; }
 
 
+    public LocalizationManager() {
+        this.code = "en";
+    }
 
-    public LocalizationManager(LocalizationPack? pack = null, string? code = null) {
+
+    public LocalizationManager(LocalizationPack? pack, string? code = null) {
         this.pack = pack;
         this.code = code ?? "en";
     }
 
 
-    public LocalizationManager(string? code = null, LocalizationPack? pack = null) {
+    public LocalizationManager(string code, LocalizationPack? pack = null) {
         this.pack = pack;
         this.code = code ?? "en";
     }
