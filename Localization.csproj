@@ -10,6 +10,11 @@
 		<Description>Simple manager for handling localization</Description>
 		<PackageTags>localization</PackageTags>
 		<RepositoryUrl>https://github.com/VeyDlin/Localization</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
-
+	
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	
 </Project>
