@@ -21,4 +21,3 @@ public class LocalizedString {
         return localizedString.ToString();
     }
 }
-

@@ -30,6 +30,12 @@ public class LocalizationPack {
 
     public static LocalizationPack FromJson(FileInfo jsonFile) {
         var json = File.ReadAllText(jsonFile.FullName);
+        return FromJson(json);
+    }
+
+
+
+    public static LocalizationPack FromJson(string json) {
         var arrayPack = JsonSerializer.Deserialize<List<Dictionary<string, string>>>(json);
         return new LocalizationPack(arrayPack!);
     }
@@ -37,8 +43,14 @@ public class LocalizationPack {
 
 
     public static LocalizationPack FromLPack(FileInfo lPackFile) {
-        // Split the input text into lines
         var text = File.ReadAllText(lPackFile.FullName);
+        return FromLPack(text);
+    }
+
+
+
+    public static LocalizationPack FromLPack(string text) {
+        // Split the input text into lines
         var lines = text.Split(["\r\n", "\n"], StringSplitOptions.None);
         var arrayPack = new List<Dictionary<string, string>>();
         var currentBlock = new Dictionary<string, string>();

@@ -2,7 +2,11 @@
 
 
 public class LocalizationManager {
-    public string code { get; set; }
+    private string _code = "en";
+    public string code {
+        get => _code;
+        set => _code = value ?? "en";  // Never allow null
+    }
 
     public LocalizationPack? pack { get; set; }
 
