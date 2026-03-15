@@ -1,6 +1,7 @@
 name: Auto GitHub Release from csproj
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
