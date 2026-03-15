@@ -3,7 +3,7 @@
 namespace Localization;
 
 
-public class LocalizationPack {
+public class LocalizationPack : ILocalizationPack {
 
     private Dictionary<int, Dictionary<string, string>> pack = new();   // <id, <code, text>>
 

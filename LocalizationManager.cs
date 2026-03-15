@@ -2,13 +2,12 @@
 
 
 public class LocalizationManager {
-    private string _code = "en";
     public string code {
-        get => _code;
-        set => _code = value ?? "en";  // Never allow null
-    }
+        get;
+        set => field = value ?? "en";
+    } = "en";
 
-    public LocalizationPack? pack { get; set; }
+    public ILocalizationPack? pack { get; set; }
 
 
     public LocalizationManager() {
@@ -16,13 +15,13 @@ public class LocalizationManager {
     }
 
 
-    public LocalizationManager(LocalizationPack? pack, string? code = null) {
+    public LocalizationManager(ILocalizationPack? pack, string? code = null) {
         this.pack = pack;
         this.code = code ?? "en";
     }
 
 
-    public LocalizationManager(string code, LocalizationPack? pack = null) {
+    public LocalizationManager(string code, ILocalizationPack? pack = null) {
         this.pack = pack;
         this.code = code ?? "en";
     }
